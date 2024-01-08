@@ -43,6 +43,7 @@ JOIN allegiances a ON st.allegiance_id = a.id
 GROUP BY st.id
 
 -- Select pro vyhledání v tabulce -pozn.: takto vyhledává podle indexu, u atmosphere index nebyl, tak to hodilo error
+CREATE INDEX idx_name ON planets(name);
 SELECT * FROM planets WHERE MATCH (volcanism) AGAINST ('magma');
 
 -- Funkce pro výpočet průměrného radiusu planet
