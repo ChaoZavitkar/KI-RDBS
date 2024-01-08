@@ -184,6 +184,10 @@ Pokud dojde k chybě (zde ošetřeno pomocí SQLEXCEPTION), dojde k rollbacku tr
 */
 
 -- User
+CREATE USER 'systemsdb_view'@'localhost' IDENTIFIED BY 'heslo123'
+DROP USER 'systemsdb_view'@'localhost';
+GRANT ALL PRIVILEGES ON systemsdb.* TO 'systemsdb_view'@'localhost'
+REVOKE ALL PRIVILEGES ON systemsdb.* FROM 'systemsdb_view'@'localhost'
 
 -- Lock
 SELECT s.name AS system_name, st.name AS station_name, GROUP_CONCAT(se.name) AS all_services, 
