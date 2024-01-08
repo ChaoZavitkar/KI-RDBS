@@ -183,6 +183,7 @@ Pokud dojde k chybě (zde ošetřeno pomocí SQLEXCEPTION), dojde k rollbacku tr
 */
 
 -- User
+
 -- Lock
 SELECT s.name AS system_name, st.name AS station_name, GROUP_CONCAT(se.name) AS all_services, 
     p.name AS planet_name, st.maxPadSize_id, a.name AS allegiance_name  
